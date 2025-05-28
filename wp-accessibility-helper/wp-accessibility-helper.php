@@ -4,7 +4,7 @@
  * Plugin URI: https://accessibility-helper.co.il/
  * Description: WP Accessibility Helper sidebar
  * Author: Alex Volkov
- * Version: 0.6.3
+ * Version: 0.6.5
  * Author URI: http://www.volkov.co.il
  * License: GPL2
  * License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -14,7 +14,7 @@
  */
 
 defined( 'ABSPATH' ) || die( 'No script kiddies please!' );
-define( 'WAH_VERSION', '0.6.3' );
+define( 'WAH_VERSION', '0.6.5' );
 define( 'WAHPRO_LINK', 'https://accessibility-helper.co.il/pro/' );
 
 require_once __DIR__ . '/inc/wah-front-functions.php';
@@ -101,7 +101,6 @@ function wp_access_helper_load_plugin_textdomain() {
 		load_plugin_textdomain( $domain, false, basename( __DIR__ ) . '/languages/' );
 	}
 }
-
 /**
  * Register front styles & scripts
  */

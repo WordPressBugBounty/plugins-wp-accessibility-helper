@@ -3,9 +3,9 @@ Contributors: vol4ikman
 Tags: accessibility,a11y,contrast,WAI,WCAG
 Donate link: http://volkov.co.il/wp-accessibility-helper/
 Requires at least: 4.3
-Tested Up To: 6.6
+Tested Up To: 6.8
 Requires PHP: 7.4
-Stable tag: 0.6.3
+Stable tag: 0.6.5
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -23,13 +23,12 @@ WP Accessibility Helper helps solve accessibility problems like font size, contr
 
 <h3>Official website</h3>
 
-<h4>English:</h4>
+<h4>English version:</h4>
 
 <a href="https://accessibility-helper.co.il/" target="_blank">https://accessibility-helper.co.il/</a>
 
 
-
-<h4>Hebrew</h4>
+<h4>Hebrew version:</h4>
 
 <a href="https://accessibility-helper.co.il/il/" target="_blank">https://accessibility-helper.co.il/il/</a>
 
@@ -184,6 +183,13 @@ More information about "what is web accessibility?" you can find here:
 
 
 == Changelog ==
+
+= 0.6.5 - [28 May 2025] =
+* Security update - Vulnerability Type: Stored XSS Administrator + role
+
+= 0.6.4 - [28 May 2025] =
+* Security update - Vulnerability Type: Stored XSS Administrator + role
+
 = 0.6.3 - [16 Jul 2024] =
 * Security update
 
