@@ -5,7 +5,7 @@ Donate link: http://volkov.co.il/wp-accessibility-helper/
 Requires at least: 4.3
 Tested Up To: 6.8
 Requires PHP: 7.4
-Stable tag: 0.6.5
+Stable tag: 0.6.6
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
