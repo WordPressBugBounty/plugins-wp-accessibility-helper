@@ -267,6 +267,7 @@ function save_contrast_variations() {
 		e.preventDefault();
 
 		var contrast_variations = [];
+		var contrast_nonce = jQuery("#wah_contrast_variations_nonce").val();
 
 		if (jQuery("ul.contrast-params-list li").length) {
 			jQuery("ul.contrast-params-list li").each(function () {
@@ -309,7 +310,7 @@ function save_contrast_variations() {
 
 					data: {
 						action: "save_contrast_variations",
-
+						nonce: contrast_nonce,
 						alldata: contrast_variations,
 					},
 
@@ -336,6 +337,7 @@ function save_contrast_variations() {
 
 				data: {
 					action: "save_empty_contrast_variations",
+					nonce: jQuery("#wah_contrast_variations_nonce").val(),
 				},
 
 				success: function (response) {

@@ -389,6 +389,7 @@ $wah_custom_fonts_list = array(
 						style="display:none;"<?php endif; ?>>
 						<div class="form100">
 							<h4 class="wah-sub-title"><?php esc_html_e( 'Please add custom contrast mode variation:', 'wp-accessibility-helper' ); ?></h4>
+							<input type="hidden" id="wah_contrast_variations_nonce" value="<?php echo esc_attr( wp_create_nonce( 'wah_contrast_variations_nonce' ) ); ?>" />
 							<ul class="contrast-params-list">
 								<?php
 								$contrast_variations = wah_get_contrast_variations();

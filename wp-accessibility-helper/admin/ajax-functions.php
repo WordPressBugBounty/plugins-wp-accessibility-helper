@@ -236,9 +236,18 @@ function remove_contrast_item() {
  * Save contrast variations
  */
 function save_contrast_variations() {
-	$response = array();
-	$alldata  = isset( $_POST['alldata'] ) ? array_map( 'wah_sanitize_array', (array) wp_unslash( $_POST['alldata'] ) ) : array();
+	$response     = array();
+	$alldata      = isset( $_POST['alldata'] ) ? array_map( 'wah_sanitize_array', (array) wp_unslash( $_POST['alldata'] ) ) : array();
+	$nonce        = isset( $_POST['nonce'] ) ? sanitize_text_field( wp_unslash( $_POST['nonce'] ) ) : '';
 	$current_user = wp_get_current_user();
+
+	if ( ! current_user_can( 'manage_options' ) || ! wp_verify_nonce( $nonce, 'wah_contrast_variations_nonce' ) ) {
+		wp_send_json_error(
+			array(
+				'message' => __( 'Security check failed. Please try again.', 'wp-accessibility-helper' ),
+			)
+		);
+	}
 
 	if ( ! in_array( 'administrator', $current_user->roles ) ) {
 		wp_die( 'You do not have permission to edit this post.' );
@@ -263,6 +272,15 @@ function save_contrast_variations() {
 function save_empty_contrast_variations() {
 	$response = array();
 	$alldata  = '';
+	$nonce    = isset( $_POST['nonce'] ) ? sanitize_text_field( wp_unslash( $_POST['nonce'] ) ) : '';
+
+	if ( ! current_user_can( 'manage_options' ) || ! wp_verify_nonce( $nonce, 'wah_contrast_variations_nonce' ) ) {
+		wp_send_json_error(
+			array(
+				'message' => __( 'Security check failed. Please try again.', 'wp-accessibility-helper' ),
+			)
+		);
+	}
 
 	if ( ! current_user_can( 'edit_post', $post_id ) ) {
 		wp_die( 'You do not have permission to edit this post.' );
